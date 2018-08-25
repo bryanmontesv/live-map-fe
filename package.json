@@ -1,0 +1,28 @@
+{
+  "name": "live-map-fe",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mapbox-gl": "^0.48.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-mapbox-gl": "^3.8.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "PORT=4041 react-scripts start",
+    "test": "eslint . && NODE_ENV=test react-scripts test --env=jsdom",
+    "delint": "eslint --fix ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
