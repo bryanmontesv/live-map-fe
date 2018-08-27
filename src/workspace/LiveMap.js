@@ -180,6 +180,25 @@ class LiveMap extends React.Component {
     this.setState({ addLocation })
   }
 
+  /**
+   * Method to remove location from map, backend will soft delete this location.
+   */
+  removeLocation () {
+    let { id } = this.state.location
+    if (window.confirm('Do you really want to remove this awesome marker :C ')) {
+      axios.delete(`${config.lmbApi}/api/locations`, {
+        data: { id }
+      })
+      .then(() => {
+        let updatedLocations = this.state.locations.filter(location => location.id !== id);
+        this.setState({ locations: updatedLocations, isEditing: false, location: undefined })
+      })
+      .catch(err => {
+        throw err
+      })
+    }
+  }
+
   render() {
     const { center, zoom, location, isEditing, isAddingLocation } = this.state;
     return (
@@ -234,6 +253,7 @@ class LiveMap extends React.Component {
                 :
                 <PopupFormat 
                   onClick={this.editLocation.bind(this)}
+                  onClickDelete={this.removeLocation.bind(this)}
                   locationValues={location} />
                 }
               </PopupStyle>
