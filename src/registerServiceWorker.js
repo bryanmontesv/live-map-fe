@@ -57,15 +57,11 @@ function registerValidSW (swUrl) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-              console.log('hi')
-
               // At this point, the old content will have been purged and
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
             } else {
-              console.log('No')
-
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
@@ -100,7 +96,6 @@ function checkValidServiceWorker (swUrl) {
       }
     })
     .catch(() => {
-      console.log('No internet')
       // No internet connection
     })
 }
