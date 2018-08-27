@@ -6,7 +6,8 @@ import '../../css/buttons.css'
 class PopupFormat extends React.Component {
   static propTypes = {
     locationValues: PropTypes.object,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    onClickDelete: PropTypes.func,
   }
 
   /**
@@ -27,7 +28,9 @@ class PopupFormat extends React.Component {
       <div>
         <div>
           <button className='button popup-button' onClick={this.props.onClick}>Edit</button>
+          <button className='button warning popup-button margin-left' onClick={this.props.onClickDelete}>Delete</button>
         </div>
+
         <div> Location Name: {location_name} </div>
         <div> Opens at: {open_time} </div>
         <div> Closes at: {close_time} </div>
